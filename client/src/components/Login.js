@@ -36,7 +36,8 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="logindiv">
+        <h3>Bubble Up!</h3>
         <form className="loginform" onSubmit={this.login}>
           <input
             type="text"
