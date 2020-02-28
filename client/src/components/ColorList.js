@@ -143,8 +143,8 @@ const ColorList = props => {
             />
           </label>
           <div className="button-row">
-            <button type="submit">Add</button>
-            <button onClick={() => setAddColor(initialColor)}>cancel</button>
+            <button type="submit">Add Color</button>
+            {/* <button onClick={() => setAdd(false)}>cancel</button> */}
           </div>
         </form>
       </div>
