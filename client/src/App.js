@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch, NavLink } from 'react-router-dom';
 
 import Login from "./components/Login";
-import PrivateRoute from './components/PrivateRoute';
+import PrivateRoute from './utils/PrivateRoute';
 import BubblePage from './components/BubblePage';
 import "./styles.scss";
 
@@ -13,18 +13,19 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <ul>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/protected">Protected Page</Link>
-          </li>
-        </ul>
+        
+          {/* <div>
+            <NavLink to="/login">Login</NavLink>
+          
+          
+            <NavLink to="/protected">Protected Page</NavLink>
+            </div> */}
+        
         <Switch>
-          <PrivateRoute path="/protected" component={BubblePage} />
+          <PrivateRoute path="/bubblepage" component={BubblePage} />
           <Route path="/login" component={Login} />
           <Route component={Login} />
+          <Route exact path="/" component={Login} />
         </Switch>
       </div>
     </Router>

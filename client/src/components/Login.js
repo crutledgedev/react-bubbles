@@ -29,7 +29,7 @@ class Login extends React.Component {
       .post('/login', this.state.credentials)
       .then(res => {
         localStorage.setItem('token', res.data.payload);
-        this.props.history.push('/protected');
+        this.props.history.push('/bubblepage');
       })
       .catch(err => console.log(err));
   };
@@ -37,7 +37,7 @@ class Login extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.login}>
+        <form className="loginform" onSubmit={this.login}>
           <input
             type="text"
             name="username"
